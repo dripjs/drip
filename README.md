@@ -1,12 +1,8 @@
-# drip.js
+![Drip Logo](http://i.imgur.com/hvr6U9k.png)
+
+# drip [![Twitter Follow](https://img.shields.io/twitter/follow/dripjs.svg?style=social?maxAge=2592000)](https://twitter.com/dripjs) [![Version](https://img.shields.io/npm/v/drip.svg)](https://www.npmjs.com/package/drip) [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/dripjs/drip/blob/master/LICENSE) [![dependencies](https://david-dm.org/dripjs/drip.svg)](https://david-dm.org/dripjs/drip) [![devDependency Status](https://david-dm.org/dripjs/drip/dev-status.svg)](https://david-dm.org/dripjs/drip#info=devDependencies)
 
 > The easiest way to build real-time backends!
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/dripjs.svg?style=social?maxAge=2592000)](https://twitter.com/dripjs)
-[![Version](https://img.shields.io/npm/v/drip.svg)](https://www.npmjs.com/package/drip)
-[![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/dripjs/drip/blob/master/LICENSE)
-[![dependencies](https://david-dm.org/dripjs/drip.svg)](https://david-dm.org/dripjs/drip)
-[![devDependency Status](https://david-dm.org/dripjs/drip/dev-status.svg)](https://david-dm.org/dripjs/drip#info=devDependencies)
 
 ---
 
