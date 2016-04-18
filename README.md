@@ -6,11 +6,27 @@
 
 ---
 
-[todo: write description]
+A real-time backend framework that works with any database. It's designed for performance and scalability.
 
 ## Features
 
 [todo: list features]
+
+## Prior Art
+
+1. Firebase
+  - hard to query
+  - not open source
+2. Meteor
+  - just MongoDB
+  - bad performance
+  - bad scalability
+3. Sails
+  - steep learning curve
+  - not a real live query system
+4. Feathers
+  - not a real live query system
+
 
 ## Getting Started
 
