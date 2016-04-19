@@ -1,3 +1,5 @@
+import MethodsManager from './methods';
+
 const serializeError = error => ({
   name: error.name,
   message: error.message,
@@ -7,7 +9,7 @@ const serializeError = error => ({
 export default class Server {
   constructor() {
     this.emitters = [];
-    this.methods = [];
+    this.methods = new MethodsManager;
   }
   addEmitter(emitter) {
     if (this.emitters.indexOf(emitter) === -1) {
@@ -17,27 +19,16 @@ export default class Server {
       this.emitters.push(emitter);
     }
   }
-  registerMethod(name, callback) {
-    if (this.methods[name] !== undefined) {
-      throw new Error('this method already exists');
-    }
-    this.methods[name] = callback;
-  }
   onCall(emitter, id, name, args = []) {
-    Promise.resolve()
-      .then(() => {
-        if (this.methods[name] === undefined) {
-          const error = new Error('method does not exist');
-          error.name = 'MethodNotFound';
-          throw error;
-        }
-        return this.methods[name](...args);
-      })
+    this.methods.callMethod(name, args)
       .then(result => {
         emitter.emit('resolve', id, result);
       })
       .catch(error => {
         emitter.emit('reject', id, serializeError(error));
       });
+  }
+  method(name, callback) {
+    this.methods.registerMethod(name, callback);
   }
 }

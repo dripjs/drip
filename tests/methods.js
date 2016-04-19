@@ -2,8 +2,8 @@ const { describe, it } = global;
 import { expect } from 'chai';
 
 import { EventEmitter } from 'events';
-import Client from '../src/methods/client';
-import Server from '../src/methods/server';
+import Client from '../src/client';
+import Server from '../src/server';
 
 describe('methods module', () => {
   let server;
@@ -19,7 +19,7 @@ describe('methods module', () => {
   });
 
   it('should call a method', done => {
-    server.registerMethod('add', (a, b) => {
+    server.method('add', (a, b) => {
       expect(a).to.be.equal(1);
       expect(b).to.be.equal(2);
       return a + b;
@@ -32,7 +32,7 @@ describe('methods module', () => {
 
 
   it('should error if method throws', done => {
-    server.registerMethod('throwError', () => {
+    server.method('throwError', () => {
       throw new Error('dada');
     });
     client.call('throwError').catch(error => {
@@ -42,7 +42,7 @@ describe('methods module', () => {
   });
 
   it('should work with promises', done => {
-    server.registerMethod('addAsync', (a, b) =>
+    server.method('addAsync', (a, b) =>
       new Promise(resolve => {
         setTimeout(() => resolve(a + b));
       })
@@ -54,7 +54,7 @@ describe('methods module', () => {
   });
 
   it('should work with rejected promises', done => {
-    server.registerMethod('rejectPromise', () =>
+    server.method('rejectPromise', () =>
       new Promise((resolve, reject) => {
         setTimeout(() => reject(new Error('dada')));
       })
