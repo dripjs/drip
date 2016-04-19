@@ -6,7 +6,7 @@
 
 ---
 
-A real-time backend framework that works with any database. It's designed for performance and scalability.
+A real-time backend framework that works with any database. It's designed with performance and scalability in mind.
 
 ## Features
 
