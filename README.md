@@ -8,6 +8,8 @@
 
 A real-time backend framework that works with any database. It's designed with performance and scalability in mind.
 
+**NOTE:** This is far from production level! I have a basic prototype and a good scalable architecture. Now I'm working on figuring out what's the best way to implement it for production use.
+
 ## Features
 
 [todo: list features]
